@@ -1,0 +1,17 @@
+.accio/
+*.bak
+index-backup.html
+luxopack-clone-superlieur.html
+video-*.html
+website-optimization-report.md
+Fragrance_Exim_Research_Report.md
+global_work_hours_comparison_table.md
+customer_report_test.docx
+generate_*.py
+logo_base64.txt
+logo_source.jpg
+products/
+unpacked_template/
+vectorize.html
+deliverables/
+Downloads/
