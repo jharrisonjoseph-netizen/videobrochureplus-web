@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><title>Vectorize</title><script src='https://cdn.jsdelivr.net/gh/jspanic/ImageTracerJS/imagetracer_v1.2.6.js'></script></head><body><img id='source' src='data:image/jpeg;base64,
