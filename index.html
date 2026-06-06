@@ -80,16 +80,33 @@
           <div class="stars">★★★★★</div>
           <h2>GET PRICING & DISCOUNTED RATES</h2>
           <p>Request a sample or send project specs. We will quote by screen size, quantity, cover type, video length and delivery country.</p>
-          <form class="quote-form" action="mailto:superlieur@superlieur.com" method="post" enctype="text/plain">
-            <input name="First Name" placeholder="First name *" required>
-            <input name="Company" placeholder="Company">
-            <input type="email" name="Email" placeholder="Email address *" required>
-            <input name="WhatsApp" placeholder="WhatsApp / Phone">
-            <select name="Screen Size"><option>Screen size</option><option>2.4 inch</option><option>4.3 inch</option><option>5.0 inch</option><option>7.0 inch</option><option>10.1 inch</option><option>Not sure yet</option></select>
-            <select name="Quantity"><option>Units needed</option><option>10 pcs</option><option>50 pcs</option><option>100 pcs</option><option>250 pcs</option><option>500 pcs</option><option>1000+ pcs</option></select>
-            <textarea name="Message" placeholder="Tell us your use case, deadline, delivery country and whether artwork/video is ready."></textarea>
-            <button class="btn btn-primary" type="submit">GET PRICING & FREE SAMPLE</button>
+          <form class="quote-form" id="quoteForm">
+            <input id="q_name" placeholder="First name *" required>
+            <input id="q_company" placeholder="Company">
+            <input type="email" id="q_email" placeholder="Email address *" required>
+            <input id="q_whatsapp" placeholder="WhatsApp / Phone">
+            <select id="q_size"><option>Screen size</option><option>2.4 inch</option><option>4.3 inch</option><option>5.0 inch</option><option>7.0 inch</option><option>10.1 inch</option><option>Not sure yet</option></select>
+            <select id="q_qty"><option>Units needed</option><option>10 pcs</option><option>50 pcs</option><option>100 pcs</option><option>250 pcs</option><option>500 pcs</option><option>1000+ pcs</option></select>
+            <textarea id="q_msg" placeholder="Tell us your use case, deadline, delivery country and whether artwork/video is ready."></textarea>
+            <button class="btn btn-primary" type="button" onclick="handleQuoteSubmit()">GET PRICING & FREE SAMPLE</button>
           </form>
+          <script>
+            function handleQuoteSubmit(){
+              const name = document.getElementById('q_name').value;
+              const email = document.getElementById('q_email').value;
+              const msg = document.getElementById('q_msg').value;
+              const company = document.getElementById('q_company').value;
+              const size = document.getElementById('q_size').value;
+              const qty = document.getElementById('q_qty').value;
+              
+              if(!name || !email){ alert('Please fill in your name and email.'); return; }
+              
+              const subject = `Inquiry from ${name} (${company || 'No Company'})`;
+              const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nScreen Size: ${size}\nQuantity: ${qty}\n\nMessage:\n${msg}`;
+              
+              window.location.href = `mailto:superlieur@superlieur.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }
+          </script>
           <div class="privacy">100% privacy guaranteed. We reply with practical factory recommendations.</div>
           <div class="quick-help"><a href="https://wa.me/8618861387818" target="_blank" rel="noopener">Need help fast?</a><a href="#process">Ordering process</a></div>
         </aside>
