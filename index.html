@@ -341,13 +341,29 @@
               btn.innerText = 'SENDING...';
               btn.disabled = true;
 
-              fetch('https://formsubmit.co/ajax/superlieur.corp@gmail.com', {
+              // 请在此处填写您从 web3forms.com 免费获取的 Access Key
+              const accessKey = 'YOUR_WEB3FORMS_KEY';
+
+              if (accessKey === 'YOUR_WEB3FORMS_KEY') {
+                const subject = `Quote Request from ${name}`;
+                const body = `Name: ${name}\nEmail: ${email}\nCountry: ${country}\nScreen Size: ${size}\nQuantity: ${qty}\nDeadline: ${deadline}\n\nMessage:\n${msg}`;
+                window.location.href = `mailto:superlieur.corp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                btn.innerText = originalText;
+                btn.disabled = false;
+                alert('提示：由于您尚未配置 Web3Forms 的 Access Key，系统已临时为您唤起本地邮件发送。配置 Key 后即可实现网页直接静默发送！');
+                return;
+              }
+
+              fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
                   'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                  access_key: accessKey,
+                  subject: `New Lead from ${name}`,
+                  from_name: "Video Brochure Plus Website",
                   Name: name,
                   Email: email,
                   Country: country,
@@ -359,12 +375,12 @@
               })
               .then(response => {
                 if (!response.ok) {
-                  return response.json().then(err => { throw new Error(err.message || 'Server error'); });
+                  throw new Error('Network response was not ok');
                 }
                 return response.json();
               })
               .then(data => {
-                if(data.success === "true" || data.success === true) {
+                if(data.success) {
                   alert('Thank you! Your quote request has been sent successfully. We will contact you shortly.');
                   document.getElementById('leadForm').reset();
                 } else {
@@ -372,7 +388,7 @@
                 }
               })
               .catch(error => {
-                alert('Submission failed: ' + error.message + '\n\n(Tip: If you are testing locally via file://, browsers block background sending. Please upload to GitHub and test on your Vercel online link!)');
+                alert('Submission failed: ' + error.message);
               })
               .finally(() => {
                 btn.innerText = originalText;
@@ -524,6 +540,13 @@ ipt>
 </body>
 </html>
 EventListener('scroll', () => { if (window.scrollY > 680) backTop.classList.add('show'); else backTop.classList.remove('show'); });
+  </script>
+</body>
+</html>
+ipt>
+</body>
+</html>
+0) backTop.classList.add('show'); else backTop.classList.remove('show'); });
   </script>
 </body>
 </html>
