@@ -314,16 +314,67 @@
         <div class="quote-box">
           <h3>Send specs for a fast quote</h3>
           <p>Tell us your project size and deadline. We will recommend the most suitable screen, card structure and production plan.</p>
-          <form class="lead-form" action="mailto:superlieur.corp@gmail.com" method="post" enctype="text/plain">
-            <input name="Name" placeholder="Your name *" required>
-            <input type="email" name="Email" placeholder="Email address *" required>
-            <input name="Delivery Country" placeholder="Delivery country">
-            <select name="Screen Size"><option>Preferred screen size</option><option>2.4 inch</option><option>4.3 inch</option><option>5.0 inch</option><option>7.0 inch</option><option>10.1 inch</option></select>
-            <select name="Quantity"><option>Quantity range</option><option>10 pcs</option><option>50 pcs</option><option>100 pcs</option><option>300 pcs</option><option>500 pcs</option><option>1000+ pcs</option></select>
-            <input name="Deadline" placeholder="Target deadline">
-            <textarea name="Message" placeholder="Artwork ready? Video length? Hardcover or softcover? Any packaging requirement?"></textarea>
-            <button class="btn btn-primary" type="submit">REQUEST QUOTE</button>
+          <form class="lead-form" id="leadForm">
+            <input id="l_name" placeholder="Your name *" required>
+            <input type="email" id="l_email" placeholder="Email address *" required>
+            <input id="l_country" placeholder="Delivery country">
+            <select id="l_size"><option>Preferred screen size</option><option>2.4 inch</option><option>4.3 inch</option><option>5.0 inch</option><option>7.0 inch</option><option>10.1 inch</option></select>
+            <select id="l_qty"><option>Quantity range</option><option>10 pcs</option><option>50 pcs</option><option>100 pcs</option><option>300 pcs</option><option>500 pcs</option><option>1000+ pcs</option></select>
+            <input id="l_deadline" placeholder="Target deadline">
+            <textarea id="l_msg" placeholder="Artwork ready? Video length? Hardcover or softcover? Any packaging requirement?"></textarea>
+            <button class="btn btn-primary" type="button" onclick="handleLeadSubmit()">REQUEST QUOTE</button>
           </form>
+          <script>
+            function handleLeadSubmit(){
+              const name = document.getElementById('l_name').value;
+              const email = document.getElementById('l_email').value;
+              const country = document.getElementById('l_country').value;
+              const size = document.getElementById('l_size').value;
+              const qty = document.getElementById('l_qty').value;
+              const deadline = document.getElementById('l_deadline').value;
+              const msg = document.getElementById('l_msg').value;
+              
+              if(!name || !email){ alert('Please fill in your name and email.'); return; }
+              
+              const btn = document.querySelector('#leadForm button');
+              const originalText = btn.innerText;
+              btn.innerText = 'SENDING...';
+              btn.disabled = true;
+
+              fetch('https://formsubmit.co/ajax/superlieur.corp@gmail.com', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                  Name: name,
+                  Email: email,
+                  Country: country,
+                  ScreenSize: size,
+                  Quantity: qty,
+                  Deadline: deadline,
+                  Message: msg
+                })
+              })
+              .then(response => response.json())
+              .then(data => {
+                if(data.success === "true") {
+                  alert('Thank you! Your quote request has been sent successfully. We will contact you shortly.');
+                  document.getElementById('leadForm').reset();
+                } else {
+                  alert('Oops! There was a problem submitting your form.');
+                }
+              })
+              .catch(error => {
+                alert('Oops! There was a problem submitting your form.');
+              })
+              .finally(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+              });
+            }
+          </script>
         </div>
       </div>
     </section>
@@ -385,13 +436,47 @@
               const company = document.getElementById('q_company').value;
               const size = document.getElementById('q_size').value;
               const qty = document.getElementById('q_qty').value;
+              const whatsapp = document.getElementById('q_whatsapp').value;
               
               if(!name || !email){ alert('Please fill in your name and email.'); return; }
               
-              const subject = `Inquiry from ${name} (${company || 'No Company'})`;
-              const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nScreen Size: ${size}\nQuantity: ${qty}\n\nMessage:\n${msg}`;
-              
-              window.location.href = `mailto:superlieur.corp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              const btn = document.querySelector('#quoteForm button');
+              const originalText = btn.innerText;
+              btn.innerText = 'SENDING...';
+              btn.disabled = true;
+
+              fetch('https://formsubmit.co/ajax/superlieur.corp@gmail.com', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                  Name: name,
+                  Email: email,
+                  Company: company,
+                  WhatsApp: whatsapp,
+                  ScreenSize: size,
+                  Quantity: qty,
+                  Message: msg
+                })
+              })
+              .then(response => response.json())
+              .then(data => {
+                if(data.success === "true") {
+                  alert('Thank you! Your inquiry has been sent successfully. We will contact you shortly.');
+                  document.getElementById('quoteForm').reset();
+                } else {
+                  alert('Oops! There was a problem submitting your form.');
+                }
+              })
+              .catch(error => {
+                alert('Oops! There was a problem submitting your form.');
+              })
+              .finally(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+              });
             }
           </script>
           <div class="privacy">100% privacy guaranteed. We reply with practical factory recommendations.</div>
