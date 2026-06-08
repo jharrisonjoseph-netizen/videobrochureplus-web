@@ -357,17 +357,22 @@
                   Message: msg
                 })
               })
-              .then(response => response.json())
+              .then(response => {
+                if (!response.ok) {
+                  return response.json().then(err => { throw new Error(err.message || 'Server error'); });
+                }
+                return response.json();
+              })
               .then(data => {
-                if(data.success === "true") {
+                if(data.success === "true" || data.success === true) {
                   alert('Thank you! Your quote request has been sent successfully. We will contact you shortly.');
                   document.getElementById('leadForm').reset();
                 } else {
-                  alert('Oops! There was a problem submitting your form.');
+                  alert('Oops! ' + (data.message || 'There was a problem submitting your form.'));
                 }
               })
               .catch(error => {
-                alert('Oops! There was a problem submitting your form.');
+                alert('Submission failed: ' + error.message + '\n\n(Tip: If you are testing locally via file://, browsers block background sending. Please upload to GitHub and test on your Vercel online link!)');
               })
               .finally(() => {
                 btn.innerText = originalText;
@@ -461,17 +466,22 @@
                   Message: msg
                 })
               })
-              .then(response => response.json())
+              .then(response => {
+                if (!response.ok) {
+                  return response.json().then(err => { throw new Error(err.message || 'Server error'); });
+                }
+                return response.json();
+              })
               .then(data => {
-                if(data.success === "true") {
+                if(data.success === "true" || data.success === true) {
                   alert('Thank you! Your inquiry has been sent successfully. We will contact you shortly.');
                   document.getElementById('quoteForm').reset();
                 } else {
-                  alert('Oops! There was a problem submitting your form.');
+                  alert('Oops! ' + (data.message || 'There was a problem submitting your form.'));
                 }
               })
               .catch(error => {
-                alert('Oops! There was a problem submitting your form.');
+                alert('Submission failed: ' + error.message + '\n\n(Tip: If you are testing locally via file://, browsers block background sending. Please upload to GitHub and test on your Vercel online link!)');
               })
               .finally(() => {
                 btn.innerText = originalText;
