@@ -59,9 +59,10 @@
     .faq{background:#f7fbff}.faq-list{max-width:900px;margin:0 auto;display:grid;gap:14px}.faq-list details{background:#fff;border:1px solid #dce8f7;border-radius:20px;padding:18px 20px;box-shadow:0 10px 24px rgba(6,27,66,.04)}.faq-list summary{cursor:pointer;font-weight:950;color:var(--navy);font-size:18px}.faq-list p{color:var(--muted);margin-top:12px}    .cta{background:var(--navy);color:#fff;padding:54px 0;border-top:1px solid rgba(212,175,55,.2)}.cta .container{display:flex;align-items:center;justify-content:space-between;gap:26px}.cta h2{font-size:44px;line-height:1;letter-spacing:-.045em;color:var(--gold)}.cta p{opacity:.93;margin-top:10px}.cta .btn{background:var(--gold);color:var(--navy);box-shadow:none}
     footer{background:#06152e;color:#c8d8f0;padding:58px 0 28px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:36px}.footer-brand{display:flex;margin-bottom:14px}.footer-grid h4{color:#fff;margin-bottom:13px}.footer-grid a,.footer-grid p{display:block;color:#c8d8f0;margin:8px 0}.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:22px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8fa6c8;font-size:14px}.whatsapp{position:fixed;left:22px;bottom:22px;z-index:90;background:#25d366;color:#fff;border-radius:999px;padding:13px 18px;box-shadow:0 12px 34px rgba(37,211,102,.35);font-weight:950}.backtop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:var(--soft);opacity:0;pointer-events:none;transition:.2s}.backtop.show{opacity:1;pointer-events:auto}
     @media(max-width:1180px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:1024px){.choose-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:1024px){.nav-links{display:none}.mobile-toggle{display:block}.nav-links.open{position:absolute;left:18px;right:18px;top:82px;background:#fff;border:1px solid #dce8f7;border-radius:22px;padding:20px;display:grid;box-shadow:var(--shadow)}.hero-grid,.story-grid,.builder{grid-template-columns:1fr}.client-strip .container{grid-template-columns:repeat(3,1fr)}.use-grid,.proof-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:14px}}
-    @media(max-width:720px){.topbar .container{display:block}.topbar .fast{margin-top:6px}.nav-inner{height:74px}.brand img{width:50px;height:50px}.brand-text strong{font-size:17px}.nav-cta .btn-outline{display:none}h1{font-size:42px}.lead{font-size:17px}.hero-bullets,.quote-form,.check-grid,.duo-grid,.lead-form{grid-template-columns:1fr}.choose-grid,.use-grid,.proof-grid,.benefit-grid,.steps{grid-template-columns:1fr}.client-strip .container{grid-template-columns:repeat(2,1fr)}.section-head h2,.story-copy h2{font-size:34px}.cta .container{display:block}.cta .btn{margin-top:22px}.footer-grid{grid-template-columns:1fr}.whatsapp{left:18px;right:18px;text-align:center}.backtop{display:none}}
+    @media(max-width:1024px){
+      .nav-links{display:none}.mobile-toggle{display:block}.nav-links.open{position:absolute;left:18px;right:18px;top:82px;background:#fff;border:1px solid #dce8f7;border-radius:22px;padding:20px;display:grid;box-shadow:var(--shadow)}.hero-grid,.story-grid,.builder{grid-template-columns:1fr}.client-strip .container{grid-template-columns:repeat(3,1fr)}.use-grid,.proof-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:14px}
+    }
+    @media(max-width:720px){.topbar .container{display:block}.topbar .fast{margin-top:6px}.nav-inner{height:74px}.brand img{width:50px;height:50px}.brand-text strong{font-size:17px}.nav-cta .btn-outline{display:none}h1{font-size:42px}.lead{font-size:17px}.hero-bullets,.quote-form,.check-grid,.duo-grid,.lead-form{grid-template-columns:1fr}.use-grid,.proof-grid,.benefit-grid,.steps{grid-template-columns:1fr}.client-strip .container{grid-template-columns:repeat(2,1fr)}.section-head h2,.story-copy h2{font-size:34px}.cta .container{display:block}.cta .btn{margin-top:22px}.footer-grid{grid-template-columns:1fr}.whatsapp{left:18px;right:18px;text-align:center}.backtop{display:none}}
   </style>
 </head>
 <body id="home">
@@ -89,7 +90,7 @@
           <span class="eyebrow"><i></i> Direct from manufacturer</span>
           <h1>Video Brochure, <br>Greeting Card & <br><span class="gradient-text">Video Wedding Invitation</span></h1>
           <p class="lead">Create premium printed video presentations for B2B sales, direct mail, fundraising, product launches, training and event invitations. We handle printing, LCD module assembly, video preload, QC and global shipping.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#quote">Get Pricing & Free Sample</a><a class="btn btn-gold" href="#choose">Help Me Choose</a><a class="btn btn-outline" href="#products">View Screen Sizes</a></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="#quote">Get Pricing & Free Sample</a><a class="btn btn-gold" href="#products">View Products</a></div>
         </div>
         <div class="hero-right">
           <div class="hero-video-wrapper">
@@ -208,18 +209,7 @@
       </div>
     </section>
 
-    <section class="choose" id="choose">
-      <div class="container">
-        <div class="section-head center"><div><h2>Help me choose the right video brochure.</h2><p>Five popular screen sizes for different campaign budgets, mailing formats and presentation impact.</p></div></div>
-        <div class="choose-grid">
-          <article class="product-card"><div class="product-visual"><img src="assets/product-2-4.png" alt="2.4 inch video card"></div><div class="product-body"><span class="tag">Compact</span><h3>2.4″ Video Card</h3><p>Best for postcard-style direct mail, invitations and high-volume campaigns.</p><ul class="spec-list"><li>Lightweight mailer</li><li>Cost-friendly sample</li><li>Custom logo inside</li></ul></div></article>
-          <article class="product-card"><div class="product-visual"><img src="assets/product-4-3.png" alt="4.3 inch video brochure"></div><div class="product-body"><span class="tag">Half Page</span><h3>4.3″ Video Brochure</h3><p>Compact brochure format with more room for visual storytelling.</p><ul class="spec-list"><li>Direct mail friendly</li><li>Good entry-level display</li><li>Softcover or hardcover</li></ul></div></article>
-          <article class="product-card"><div class="product-visual"><img src="assets/product-5-0.png" alt="5.0 inch video brochure"></div><div class="product-body"><span class="tag">Most Flexible</span><h3>5.0″ Video Brochure</h3><p>Balanced size for company profiles, product introductions and samples.</p><ul class="spec-list"><li>Strong B2B choice</li><li>Great for samples</li><li>Flexible button layout</li></ul></div></article>
-          <article class="product-card"><div class="product-visual"><img src="assets/product-7-0.png" alt="7.0 inch A5 video brochure"></div><div class="product-body"><span class="tag">Presentation Folder</span><h3>7.0″ Video Brochure</h3><p>Classic presentation size for sales kits, catalogs and corporate introductions.</p><ul class="spec-list"><li>Wide viewing area</li><li>Professional brochure feel</li><li>Popular B2B option</li></ul></div></article>
-          <article class="product-card"><div class="product-visual"><img src="assets/product-10-1.png" alt="10.1 inch A4 video brochure"></div><div class="product-body"><span class="tag">Premium</span><h3>10.1″ Video Brochure</h3><p>Large-screen format for high-value proposals and luxury presentations.</p><ul class="spec-list"><li>Large LCD display</li><li>Premium hard cover</li><li>Maximum impact</li></ul></div></article>
-        </div>
-      </div>
-    </section>
+
 
     <section class="story" id="products">
       <div class="container">
@@ -387,7 +377,7 @@
     <div class="container">
       <div class="footer-grid">
         <div><a class="brand footer-brand" href="#home"><img src="assets/vbp-logo.png" alt="Video Brochure Plus logo"><span class="brand-text"><strong style="color:#fff">VIDEO BROCHURE PLUS</strong><small>custom LCD video cards</small></span></a><p>Premium custom video brochures for B2B marketing, product launches, events, direct mail, fundraising and corporate presentations.</p></div>
-        <div><h4>Products</h4><a href="#choose">2.4″ Video Cards</a><a href="#choose">4.3″ Video Brochures</a><a href="#choose">5.0″ Video Brochures</a><a href="#choose">7.0″ Video Brochures</a><a href="#choose">10.1″ Video Brochures</a></div>
+        <div><h4>Products</h4><a href="#products">2.4″ Video Cards</a><a href="#products">4.3″ Video Brochures</a><a href="#products">5.0″ Video Brochures</a><a href="#products">7.0″ Video Brochures</a><a href="#products">10.1″ Video Brochures</a></div>
         <div><h4>Resources</h4><a href="#products">What is a Video Brochure?</a><a href="#uses">Popular Uses</a><a href="#process">Ordering Process</a><a href="#faq">FAQ</a></div>
         <div><h4>Contact</h4><p>Email: superlieur.corp@gmail.com</p><p>WhatsApp: +86 188 6138 7818</p><p>Website: www.superlieur.com</p></div>
       </div>
@@ -405,5 +395,8 @@
     const backTop = document.getElementById('backTop');
     window.addEventListener('scroll', () => { if (window.scrollY > 680) backTop.classList.add('show'); else backTop.classList.remove('show'); });
   </script>
+</body>
+</html>
+ipt>
 </body>
 </html>
