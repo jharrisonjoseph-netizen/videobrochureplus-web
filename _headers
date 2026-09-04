@@ -1,0 +1,34 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/assets/*
+  Cache-Control: public, max-age=2592000
+
+/assets/index.html
+  X-Robots-Tag: noindex, nofollow
+
+/AUSTRALIA_VIDEO_BROCHURE_ANALYSIS.html
+  X-Robots-Tag: noindex, nofollow
+
+/VIDEO_BROCHURE_B2B_Report.html
+  X-Robots-Tag: noindex, nofollow
+
+/luxopack-clone-superlieur.html
+  X-Robots-Tag: noindex, nofollow
+
+/superlieur-official.html
+  X-Robots-Tag: noindex, nofollow
+
+/superlieur-optimized.html
+  X-Robots-Tag: noindex, nofollow
+
+/video-greeting-card-premium.html
+  X-Robots-Tag: noindex, nofollow
+
+/video-frame.html
+  X-Robots-Tag: noindex, nofollow
+
+/video-module.html
+  X-Robots-Tag: noindex, nofollow
