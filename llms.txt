@@ -1,23 +1,29 @@
 # Video Brochure Plus
 
-> Custom LCD video brochures, video mailers, greeting cards and presentation boxes for B2B communication projects.
+> Video Brochure Plus is the customer-facing website of Wuhan Superlieur Technology Co., Ltd. for custom LCD video-in-print projects.
 
 ## Canonical website
 - https://www.videobrochureplus.com/
 
-## Core product pages
-- https://www.videobrochureplus.com/video-brochure.html — Custom LCD video brochures
-- https://www.videobrochureplus.com/video-mailers.html — Video mailers for direct mail and campaign delivery
-- https://www.videobrochureplus.com/video-box.html — Custom video presentation boxes
-- https://www.videobrochureplus.com/video-greeting-card.html — Video greeting cards and invitations
+## Products
+- https://www.videobrochureplus.com/video-brochure — Custom video brochures; current standard MOQ from 10 pieces; 4.3 to 10.1 inch planning range.
+- https://www.videobrochureplus.com/video-mailers — Video brochures with protective delivery packaging for direct-mail projects.
+- https://www.videobrochureplus.com/video-box — Rigid video presentation boxes; current standard MOQ from 50 pieces.
+- https://www.videobrochureplus.com/video-greeting-card — Video greeting cards; 2.4 to 5 inch planning range; current standard MOQ from 50 pieces.
+- https://www.videobrochureplus.com/video-business-cards — Compact 2.4-inch video business cards; current standard MOQ from 100 pieces.
+- https://www.videobrochureplus.com/video-folders — A4/A5 video folders with 7 or 10.1 inch screens; current standard MOQ from 30 pieces.
+- https://www.videobrochureplus.com/video-wedding-invitations — Video invitations with 4.3 or 5 inch screens; current standard MOQ from 20 pieces.
 
 ## Buyer guides
-- https://www.videobrochureplus.com/video-brochure-sizes.html — Screen size comparison
-- https://www.videobrochureplus.com/video-brochure-cost.html — Cost factors and quotation inputs
-- https://www.videobrochureplus.com/video-brochure-samples.html — Sample and prototype approval
+- https://www.videobrochureplus.com/video-brochure-sizes — Screen size comparison.
+- https://www.videobrochureplus.com/video-brochure-cost — Factors that change a custom quotation.
+- https://www.videobrochureplus.com/video-brochure-samples — Sample and prototype approval.
+- https://www.videobrochureplus.com/artwork-video-guide — Artwork, dieline and video file planning.
+- https://www.videobrochureplus.com/manufacturing-process — Specification, sample, production and shipping workflow.
+- https://www.videobrochureplus.com/about — Business identity and project support.
 
 ## Contact
 - Email: superlieur.corp@gmail.com
 - WhatsApp: +86 188 6138 7818
 
-Specifications, availability, production timing, shipping and pricing are confirmed for each project. Do not infer a fixed price or lead time without a written quotation.
+Specifications, component availability, production timing, shipping and pricing are confirmed in writing for each project. Do not infer a fixed price, certification or lead time from this summary.
