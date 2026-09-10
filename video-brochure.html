@@ -34,34 +34,73 @@
   </style>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Product",
-        "@id":"https://www.videobrochureplus.com/video-brochure#product",
-        "name":"Custom LCD Video Brochure",
-        "description":"A configurable printed video brochure with an LCD screen, speaker, rechargeable battery and preloaded video for B2B communication projects.",
-        "image":["https://www.videobrochureplus.com/assets/product-7-0-960.webp","https://www.videobrochureplus.com/assets/product-5-0-960.webp"],
-        "brand":{"@type":"Brand","name":"Video Brochure Plus"},
-        "manufacturer":{"@type":"Organization","name":"Wuhan Superlieur Technology Co., Ltd."}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.videobrochureplus.com/video-brochure#service",
+      "name": "Custom LCD Video Brochure",
+      "description": "A configurable printed video brochure with an LCD screen, speaker, rechargeable battery and preloaded video for B2B communication projects.",
+      "image": [
+        "https://www.videobrochureplus.com/assets/product-7-0-960.webp",
+        "https://www.videobrochureplus.com/assets/product-5-0-960.webp"
+      ],
+      "serviceType": "Custom LCD video-in-print manufacturing",
+      "provider": {
+        "@type": "Organization",
+        "name": "Wuhan Superlieur Technology Co., Ltd.",
+        "@id": "https://www.videobrochureplus.com/#organization"
       },
-      {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.videobrochureplus.com/"},
-          {"@type":"ListItem","position":2,"name":"Video Brochures","item":"https://www.videobrochureplus.com/video-brochure"}
-        ]
-      },
-      {
-        "@type":"FAQPage",
-        "mainEntity":[
-          {"@type":"Question","name":"What information is needed for a video brochure quote?","acceptedAnswer":{"@type":"Answer","text":"Provide the screen size, finished card size, quantity, destination country, delivery deadline, video length and any required cover or button options."}},
-          {"@type":"Question","name":"Should I approve a sample before production?","acceptedAnswer":{"@type":"Answer","text":"A physical sample helps the buyer review print color, construction, screen playback, audio, buttons, charging and packaging before mass production."}},
-          {"@type":"Question","name":"Which video brochure screen size should I choose?","acceptedAnswer":{"@type":"Answer","text":"The screen should be selected according to content detail, finished card dimensions, delivery method, quantity and budget. Common planning options include 4.3, 5, 7 and 10.1 inches."}}
-        ]
-      }
-    ]
-  }
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.videobrochureplus.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Video Brochures",
+          "item": "https://www.videobrochureplus.com/video-brochure"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What information is needed for a video brochure quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Provide the screen size, finished card size, quantity, destination country, delivery deadline, video length and any required cover or button options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I approve a sample before production?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A physical sample helps the buyer review print color, construction, screen playback, audio, buttons, charging and packaging before mass production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which video brochure screen size should I choose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The screen should be selected according to content detail, finished card dimensions, delivery method, quantity and budget. Common planning options include 4.3, 5, 7 and 10.1 inches."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

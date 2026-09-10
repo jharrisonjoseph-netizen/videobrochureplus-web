@@ -14,6 +14,10 @@ PUBLIC = [
  'video-brochure-sizes.html','video-brochure-cost.html','video-brochure-samples.html',
  'artwork-video-guide.html','manufacturing-process.html','about.html'
 ]
+SERVICE_PAGES = {
+ 'video-brochure.html','video-mailers.html','video-box.html','video-greeting-card.html',
+ 'video-business-cards.html','video-folders.html','video-wedding-invitations.html'
+}
 
 class Page(HTMLParser):
  def __init__(self):
@@ -45,7 +49,16 @@ for name in PUBLIC:
  assert page.title.strip() and len(page.title.strip())<=70, (name,page.title)
  assert len(page.ids)==len(set(page.ids)), (name,Counter(page.ids))
  assert len(re.findall(r'<script type="application/ld\+json">(.*?)</script>',raw,re.S))>=1, name
- for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',raw,re.S): json.loads(block)
+ schema_nodes=[]
+ for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',raw,re.S):
+  schema=json.loads(block)
+  schema_nodes.extend(schema.get('@graph',[schema]))
+ for node in schema_nodes:
+  if node.get('@type')=='Product':
+   assert any(key in node for key in ('offers','review','aggregateRating')), (name,'invalid Product schema')
+ if name in SERVICE_PAGES:
+  services=[node for node in schema_nodes if node.get('@type')=='Service']
+  assert len(services)==1 and services[0].get('provider') and services[0].get('areaServed'), (name,'Service schema')
  visible=' '.join(re.sub(r'<(?:script|style).*?</(?:script|style)>',' ',raw,flags=re.S|re.I).split())
  visible=re.sub(r'<[^>]+>',' ',visible)
  assert len(visible.split())>=250, (name,len(visible.split()))
