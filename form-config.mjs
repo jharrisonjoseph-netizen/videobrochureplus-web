@@ -1,2 +1,2 @@
-// Web3Forms access key retained from the site's existing configured quotation form.
-export const web3formsAccessKey = '07b23c24-8a24-4ed1-bdb1-08e5a8b91308';
+// Web3Forms access key for the Video Brochure Plus quotation form.
+export const web3formsAccessKey = '474de7f6-a89f-4c08-ad5c-7ec7683d74c0';
