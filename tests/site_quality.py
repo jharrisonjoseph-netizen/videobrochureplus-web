@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.videobrochureplus.com'
 CONTACT_EMAIL = 'videobrochureplus@gmail.com'
 OLD_CONTACT_EMAIL = 'superlieur.corp@gmail.com'
-LEGAL_NAME = 'WUHAN SUPERLIEUR TECHNOLOGY CO., LTD'
+LEGAL_NAME = 'SUPERLIEUR TECHNOLOGY LIMITED'
 PUBLIC = [
  'index.html','video-brochure.html','video-mailers.html','video-box.html','video-greeting-card.html',
  'video-business-cards.html','video-folders.html','video-wedding-invitations.html',
