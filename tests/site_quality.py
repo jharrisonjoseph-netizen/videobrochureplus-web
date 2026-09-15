@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.videobrochureplus.com'
 CONTACT_EMAIL = 'videobrochureplus@gmail.com'
 OLD_CONTACT_EMAIL = 'superlieur.corp@gmail.com'
+LEGAL_NAME = 'WUHAN SUPERLIEUR TECHNOLOGY CO., LTD'
 PUBLIC = [
  'index.html','video-brochure.html','video-mailers.html','video-box.html','video-greeting-card.html',
  'video-business-cards.html','video-folders.html','video-wedding-invitations.html',
@@ -66,6 +67,7 @@ for name in PUBLIC:
  assert len(visible.split())>=250, (name,len(visible.split()))
  assert 'formsubmit.co' not in raw.lower(), name
  assert CONTACT_EMAIL in raw and OLD_CONTACT_EMAIL not in raw, (name,'contact email')
+ assert LEGAL_NAME in raw, (name,'legal company name')
  assert 'cdn.tailwindcss.com' not in raw.lower(), name
  assert 'sc01.alicdn.com' not in raw.lower() and 'sc02.alicdn.com' not in raw.lower(), name
  titles.append(page.title.strip()); descriptions.append(page.descriptions[0]); canonicals.append(page.canon[0])
@@ -118,8 +120,12 @@ assert vercel['cleanUrls'] is True and vercel['trailingSlash'] is False
 assert vercel['buildCommand']=='node build-site.mjs' and vercel['outputDirectory']=='dist'
 assert any(x['source']=='/index' and x['destination']=='/' for x in vercel['redirects'])
 home=(ROOT/'index.html').read_text()
+about=(ROOT/'about.html').read_text()
+llms=(ROOT/'llms.txt').read_text()
 assert 'autoplay' not in home and 'preload="none"' in home
 assert home.count('data-inquiry-form')==2
+for fact in ('Shenzhen','Wuhan','Hong Kong','200+','United States','European Union','Australia','United Arab Emirates','ISO','CE','FCC','RoHS','UN38.3'):
+ assert fact in home and fact in about and fact in llms, ('company fact',fact)
 assert 'https://api.web3forms.com/submit' in (ROOT/'forms-core.mjs').read_text()
 for name in ('404.html','llms.txt'):
  raw=(ROOT/name).read_text()
