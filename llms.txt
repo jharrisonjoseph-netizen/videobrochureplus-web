@@ -1,12 +1,12 @@
 # Video Brochure Plus
 
-> Video Brochure Plus is the customer-facing website of Wuhan Superlieur Technology Co., Ltd. for custom LCD video-in-print projects.
+> Video Brochure Plus is the customer-facing website of SUPERLIEUR TECHNOLOGY LIMITED for custom LCD video-in-print projects.
 
 ## Canonical website
 - https://www.videobrochureplus.com/
 
 ## Company and manufacturing profile
-- Legal company name: WUHAN SUPERLIEUR TECHNOLOGY CO., LTD
+- Legal company name: SUPERLIEUR TECHNOLOGY LIMITED
 - Customer-facing brand: Video Brochure Plus
 - Production and project locations: Shenzhen, Wuhan and Hong Kong
 - Production team: 200+ people across the operating network
