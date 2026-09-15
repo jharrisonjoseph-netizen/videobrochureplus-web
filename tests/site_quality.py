@@ -8,6 +8,8 @@ import json, re
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.videobrochureplus.com'
+CONTACT_EMAIL = 'videobrochureplus@gmail.com'
+OLD_CONTACT_EMAIL = 'superlieur.corp@gmail.com'
 PUBLIC = [
  'index.html','video-brochure.html','video-mailers.html','video-box.html','video-greeting-card.html',
  'video-business-cards.html','video-folders.html','video-wedding-invitations.html',
@@ -63,6 +65,7 @@ for name in PUBLIC:
  visible=re.sub(r'<[^>]+>',' ',visible)
  assert len(visible.split())>=250, (name,len(visible.split()))
  assert 'formsubmit.co' not in raw.lower(), name
+ assert CONTACT_EMAIL in raw and OLD_CONTACT_EMAIL not in raw, (name,'contact email')
  assert 'cdn.tailwindcss.com' not in raw.lower(), name
  assert 'sc01.alicdn.com' not in raw.lower() and 'sc02.alicdn.com' not in raw.lower(), name
  titles.append(page.title.strip()); descriptions.append(page.descriptions[0]); canonicals.append(page.canon[0])
@@ -118,4 +121,7 @@ home=(ROOT/'index.html').read_text()
 assert 'autoplay' not in home and 'preload="none"' in home
 assert home.count('data-inquiry-form')==2
 assert 'https://api.web3forms.com/submit' in (ROOT/'forms-core.mjs').read_text()
+for name in ('404.html','llms.txt'):
+ raw=(ROOT/name).read_text()
+ assert CONTACT_EMAIL in raw and OLD_CONTACT_EMAIL not in raw, (name,'contact email')
 print(f'Validated {len(PUBLIC)} indexable pages, metadata, schema, sitemap, links, images, forms and redirects.')
