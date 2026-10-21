@@ -15,6 +15,8 @@ PUBLIC = [
  'index.html','video-brochure.html','video-mailers.html','video-box.html','video-greeting-card.html',
  'video-business-cards.html','video-folders.html','video-wedding-invitations.html',
  'video-brochure-sizes.html','video-brochure-cost.html','video-brochure-samples.html',
+ 'video-brochure-use-cases.html','video-brochure-for-real-estate.html',
+ 'video-brochure-specifications.html','video-brochure-faq.html',
  'artwork-video-guide.html','manufacturing-process.html','about.html'
 ]
 SERVICE_PAGES = {
@@ -86,6 +88,7 @@ for name in PUBLIC:
 assert len(titles)==len(set(titles))
 assert len(descriptions)==len(set(descriptions))
 assert len(canonicals)==len(set(canonicals))
+assert all('max-snippet:-1' in raw and 'max-video-preview:-1' in raw for raw,_ in pages.values())
 
 def resolve(path):
  path=unquote(path)
@@ -94,6 +97,7 @@ def resolve(path):
  if candidate.exists(): return candidate
  return ROOT/path.lstrip('/')
 
+incoming=Counter()
 for name,(raw,page) in pages.items():
  for href in page.links:
   u=urlsplit(href)
@@ -105,9 +109,12 @@ for name,(raw,page) in pages.items():
   else:
    target=resolve('/'+u.path)
   assert target.exists(), (name,href,target)
+  if target.name in pages and target.name != name: incoming[target.name]+=1
   if u.fragment:
    target_name='index.html' if target.name=='index.html' else target.name
    assert u.fragment in pages.get(target_name,(target.read_text(),Page()))[0], (name,href)
+for name in PUBLIC:
+ if name!='index.html': assert incoming[name]>=1, (name,'orphan page')
 
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 tree=ElementTree.parse(ROOT/'sitemap.xml')
@@ -127,6 +134,8 @@ assert home.count('data-inquiry-form')==2
 for fact in ('Shenzhen','Wuhan','Hong Kong','200+','United States','European Union','Australia','United Arab Emirates','ISO','CE','FCC','RoHS','UN38.3'):
  assert fact in home and fact in about and fact in llms, ('company fact',fact)
 assert 'https://api.web3forms.com/submit' in (ROOT/'forms-core.mjs').read_text()
+for path in ('/video-brochure-use-cases','/video-brochure-for-real-estate','/video-brochure-specifications','/video-brochure-faq'):
+ assert path in home and path in llms, ('new discovery path',path)
 for name in ('404.html','llms.txt'):
  raw=(ROOT/name).read_text()
  assert CONTACT_EMAIL in raw and OLD_CONTACT_EMAIL not in raw, (name,'contact email')
