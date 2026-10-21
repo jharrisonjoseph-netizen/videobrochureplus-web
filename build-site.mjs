@@ -14,6 +14,10 @@ const pages = [
   'video-brochure-sizes.html',
   'video-brochure-cost.html',
   'video-brochure-samples.html',
+  'video-brochure-use-cases.html',
+  'video-brochure-for-real-estate.html',
+  'video-brochure-specifications.html',
+  'video-brochure-faq.html',
   'artwork-video-guide.html',
   'manufacturing-process.html',
   'about.html'
