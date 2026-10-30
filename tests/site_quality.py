@@ -120,6 +120,14 @@ ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 tree=ElementTree.parse(ROOT/'sitemap.xml')
 sitemap={node.text for node in tree.findall('.//s:loc',ns)}
 assert sitemap==set(canonicals), (sitemap,set(canonicals))
+image_ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9','i':'http://www.google.com/schemas/sitemap-image/1.1'}
+for node in tree.findall('s:url',image_ns):
+ images=node.findall('i:image/i:loc',image_ns)
+ assert images, (node.find('s:loc',image_ns).text,'missing sitemap images')
+ for image in images:
+  assert image.text.startswith(BASE+'/assets/')
+  assert resolve(urlsplit(image.text).path).exists(), image.text
+
 robots=(ROOT/'robots.txt').read_text()
 assert 'OAI-SearchBot' in robots and 'Googlebot' in robots and BASE+'/sitemap.xml' in robots
 vercel=json.loads((ROOT/'vercel.json').read_text())
