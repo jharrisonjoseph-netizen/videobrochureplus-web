@@ -20,6 +20,10 @@ const pages = [
   'video-brochure-faq.html',
   'artwork-video-guide.html',
   'manufacturing-process.html',
+  'what-is-a-video-brochure.html',
+  'video-brochure-vs-video-mailer.html',
+  'video-brochure-for-trade-shows.html',
+  'how-to-upload-video-to-video-brochure.html',
   'about.html'
 ];
 

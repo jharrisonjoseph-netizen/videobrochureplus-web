@@ -17,7 +17,8 @@ PUBLIC = [
  'video-brochure-sizes.html','video-brochure-cost.html','video-brochure-samples.html',
  'video-brochure-use-cases.html','video-brochure-for-real-estate.html',
  'video-brochure-specifications.html','video-brochure-faq.html',
- 'artwork-video-guide.html','manufacturing-process.html','about.html'
+ 'artwork-video-guide.html','manufacturing-process.html','about.html',
+ 'what-is-a-video-brochure.html','video-brochure-vs-video-mailer.html','video-brochure-for-trade-shows.html','how-to-upload-video-to-video-brochure.html'
 ]
 SERVICE_PAGES = {
  'video-brochure.html','video-mailers.html','video-box.html','video-greeting-card.html',
