@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.videobrochureplus.com/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.videobrochureplus.com/assets/product-2.4-1-960.webp</image:loc>
@@ -93,7 +93,7 @@
   </url>
   <url>
     <loc>https://www.videobrochureplus.com/video-brochure-use-cases</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://www.videobrochureplus.com/assets/product-7-0-960.webp</image:loc>
@@ -109,7 +109,7 @@
   </url>
   <url>
     <loc>https://www.videobrochureplus.com/video-brochure-specifications</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://www.videobrochureplus.com/assets/product-5-0-960.webp</image:loc>
@@ -117,7 +117,7 @@
   </url>
   <url>
     <loc>https://www.videobrochureplus.com/video-brochure-faq</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://www.videobrochureplus.com/assets/product-4-3-960.webp</image:loc>
@@ -169,6 +169,38 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://www.videobrochureplus.com/assets/product-10-1-960.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.videobrochureplus.com/what-is-a-video-brochure</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.videobrochureplus.com/assets/product-7-0-960.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.videobrochureplus.com/video-brochure-vs-video-mailer</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.videobrochureplus.com/assets/product-2.4-4-960.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.videobrochureplus.com/video-brochure-for-trade-shows</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.videobrochureplus.com/assets/product-5-0-960.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.videobrochureplus.com/how-to-upload-video-to-video-brochure</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.videobrochureplus.com/assets/product-4-3-960.webp</image:loc>
     </image:image>
   </url>
 </urlset>
